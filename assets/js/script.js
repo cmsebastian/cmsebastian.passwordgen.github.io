@@ -1,45 +1,74 @@
-//a promt that indicates complexity
-alert("Use slider to indicate length of password");
-alert(
-  "Select lowercase, uppercase, numbers or special characters"
-);
+// PASSWORD RESULT
+const result = document.getElementById('password');
 
-//generate 
-function generate() {
-  
-  var complexity = document.getElementById("slider").value;
+// PASSWORD LENGTH
+const complexity = document.getElementById('length');
+// console.log(length)
 
-  //possible values
+// CONSTANT ATTRIBUTES
+const upperCase = document.getElementById('upperCase');
+const lowerCase = document.getElementById('lowerCase');
+const numbers = document.getElementById('numbers');
+const specialCharacters = document.getElementById('specialCharacters');
 
-  var values =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;=?@[]^_`{|}~";
- 
-  
+// BUTTON CONSTANTS
+const generateButton = document.getElementById('generate');
+const copyPassword = document.getElementById('copy');
 
-  var password = "";
+const password = ''
 
-  for (var i = 0; i <= complexity; i++) {
-    password =
-      password +
-      values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
-  }
+// ARRAY OF ATTRIBUTES
+var attributes = [
+    upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    lower = 'abcdefghijklmnopqrstuvwxyz',
+    nums = '0123456789',
+    special = '!@#$%^&*()?'
+];
 
- //add past passwords
-  document.getElementById("display").value = password;
+// CONSOLE LOG TO CHECK VARIABLES ARE DECLARED
+    console.log(attributes)
+    console.log(upper)
+    console.log(lower)
+    console.log(nums)
+    console.log(special)
+    console.log(password)
 
-  //add password to previously generated
-  document.getElementById("lastPass").innerHTML += password + "<br ?";
+
+function getRandomUpper() {
+  let index = Math.floor(Math.random() * attributes[0].length);
+  return (attributes[0][index]);
 }
 
-document.getElementById("length").innerHTML = "Length: 100";
+function getRandomLower() {
+  let index = Math.floor(Math.random() * attributes[1].length);
+  return (attributes[1][index]);
+}
 
-//function to set length of slider position
-document.getElementById("slider").oninput = function () {
-  if (document.getElementById("slider").value > 0) {
-    document.getElementById("length").innerHTML =
-      "Length: " + document.getElementById("slider").value;
-  } else {
-    document.getElementById("length").innerHTML = "Length: 8";
-  }
-};
+function getRandomNumber() {
+  let index = Math.floor(Math.random() * attributes[2].length);
+  return (attributes[2][index]);
+  
+}
 
+function getRandomSpecial() {
+  let index = Math.floor(Math.random() * attributes[3].length);
+  return (attributes[3][index]);
+}
+
+console.log(getRandomUpper())
+console.log(getRandomLower())
+console.log(getRandomNumber())
+console.log(getRandomSpecial())
+
+const randomize = {
+  upper: getRandomUpper,
+  lower: getRandomLower,
+  number: getRandomNumber,
+  special: getRandomSpecial,
+}
+
+function generate() {
+  const length = +complexity.value;
+  console.log(length);
+  console.log(typeof length)
+}
