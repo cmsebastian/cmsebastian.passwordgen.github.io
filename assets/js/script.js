@@ -2,7 +2,7 @@
 const result = document.getElementById('password');
 
 // PASSWORD LENGTH
-const complexity = document.getElementById('length');
+const complexity = document.getElementById('passwordLength');
 // console.log(length)
 
 // CONSTANT ATTRIBUTES
@@ -26,7 +26,7 @@ var attributes = [
 ];
 
 // CONSOLE LOG TO CHECK VARIABLES ARE DECLARED
-    console.log(attributes)
+    // console.log(attributes)
     console.log(upper)
     console.log(lower)
     console.log(nums)
@@ -60,15 +60,44 @@ console.log(getRandomLower())
 console.log(getRandomNumber())
 console.log(getRandomSpecial())
 
-const randomize = {
-  upper: getRandomUpper,
-  lower: getRandomLower,
-  number: getRandomNumber,
-  special: getRandomSpecial,
-}
+// function upperCheck() {
+//   if (document.getElementById('upperCase').checked = true) {
+//     getRandomUpper()
+//   }
+// };
 
-function generate() {
-  const length = +complexity.value;
-  console.log(length);
-  console.log(typeof length)
-}
+// function lowerCheck() {
+//   if (document.getElementById('lowerCase').checked = true) {
+//     getRandomLower()
+//   }
+// }; 
+  
+// function numberCheck() {
+//     if (document.getElementById('numbers').checked = true) {
+//       getRandomNumber()
+//   }
+// };
+
+// function specialCheck() {
+//   if (document.getElementById('specialCharacter').checked = true) {
+//     getRandomSpecial()
+//   }
+// };  
+
+// console.log(upperCheck());
+// console.log(lowerCheck());
+// console.log(numberCheck());
+// console.log(specialCheck());
+
+// GENERATE PASSWORD
+// function generate() {
+//   upperCheck();
+//   lowerCheck();
+//   numberCheck();
+//   specialCheck();
+// }
+
+generateButton.addEventListener("click", function() {
+  var length = complexity.value;
+  console.log(length)
+});

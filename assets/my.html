@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="assets/css/my.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
@@ -28,30 +28,30 @@
                                 <div class="passwordAttributes p-2">
                                     <div class="setting">
                                       <label>Password length</label>
-                                      <input type="number" id="length" min='8' max="100" value="" />
+                                      <input type="number" id="paswordLength" min='8' max="100" value="" />
                                     </div>
 
                                     <div class="attributes">
                                       <label>Upper Case</label>
-                                      <input type="checkbox" id="upperCase" checked>
+                                      <input type="checkbox" id="upperCase" unchecked>
                                     </div>
 
                                     <div class="attributes">
                                       <label>Lower Case</label>
-                                      <input type="checkbox" id="lowerCase" checked>
+                                      <input type="checkbox" id="lowerCase" unchecked>
                                     </div>
 
                                     <div class="attributes">
                                       <label>Password Length</label>
-                                      <input type="checkbox" id="numbers" checked>
+                                      <input type="checkbox" id="numbers" unchecked>
                                     </div>
 
                                     <div class="attributes">
                                       <label>Password Length</label>
-                                      <input type="checkbox" id="specialCharacters" checked>
+                                      <input type="checkbox" id="specialCharacters" unchecked>
                                     </div>
                                     <div>
-                                        <button onclick="generate()" id="generate">Generate</button>
+                                        <button id="generate">Generate</button>
                                     </div>
                                   </div>        
                                 </div>
