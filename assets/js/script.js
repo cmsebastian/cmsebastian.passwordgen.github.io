@@ -2,7 +2,7 @@
 const result = document.getElementById('password');
 
 // PASSWORD LENGTH
-const complexity = document.getElementById('passwordLength');
+const complexity = document.getElementById('length');
 // console.log(length)
 
 // CONSTANT ATTRIBUTES
@@ -26,14 +26,14 @@ var attributes = [
 ];
 
 // CONSOLE LOG TO CHECK VARIABLES ARE DECLARED
-    // console.log(attributes)
+    console.log(attributes)
     console.log(upper)
     console.log(lower)
     console.log(nums)
     console.log(special)
     console.log(password)
 
-
+// FUNCTIONS FOR GENERATING EACH ATRRIBUTE
 function getRandomUpper() {
   let index = Math.floor(Math.random() * attributes[0].length);
   return (attributes[0][index]);
@@ -55,49 +55,21 @@ function getRandomSpecial() {
   return (attributes[3][index]);
 }
 
+// CONSOLE LOG FOR EACH ATTRIBUTE FUNCTIONS
 console.log(getRandomUpper())
 console.log(getRandomLower())
 console.log(getRandomNumber())
 console.log(getRandomSpecial())
 
-// function upperCheck() {
-//   if (document.getElementById('upperCase').checked = true) {
-//     getRandomUpper()
-//   }
-// };
+const randomize = {
+  upper: getRandomUpper,
+  lower: getRandomLower,
+  number: getRandomNumber,
+  special: getRandomSpecial,
+}
 
-// function lowerCheck() {
-//   if (document.getElementById('lowerCase').checked = true) {
-//     getRandomLower()
-//   }
-// }; 
-  
-// function numberCheck() {
-//     if (document.getElementById('numbers').checked = true) {
-//       getRandomNumber()
-//   }
-// };
-
-// function specialCheck() {
-//   if (document.getElementById('specialCharacter').checked = true) {
-//     getRandomSpecial()
-//   }
-// };  
-
-// console.log(upperCheck());
-// console.log(lowerCheck());
-// console.log(numberCheck());
-// console.log(specialCheck());
-
-// GENERATE PASSWORD
-// function generate() {
-//   upperCheck();
-//   lowerCheck();
-//   numberCheck();
-//   specialCheck();
-// }
-
-generateButton.addEventListener("click", function() {
-  var length = complexity.value;
-  console.log(length)
-});
+function generate() {
+  const length = +complexity.value;
+  console.log(length);
+  console.log(typeof length)
+}

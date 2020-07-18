@@ -1,21 +1,26 @@
-generate.addEventListener("click", function generatePassword(){
+// generate.addEventListener("click", function generatePassword()
+
+function generatePassword(document.getElementById(passwordLength)) {
+
+    
 
     var passwordLength = document.getElementById("passwordLength").value;
 
-    var attributes = 
+    var attributes = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()?<>"
+    var password = " "
 
-   var password = ""
+    for (var i = 0; i < passwordLength; i++) {
+        password += characters.charAt(Math.floor(Math.random() * passwordLength));
+    } return password;
 
-    for (var i = 0; i <= passwordLength; i++) {
-        password = password + attributes.charAt(Math.floor(Math.random() * Math.floor(passwordLength.length - 1)));
-    }
 
-    document.getElementById("password").value = password;
-
-    // console.log(password);
-    // console.log(passwordLength);
-    // console.log(attributes);
-    // console.log(generatePassword());
+    console.log(password);
+    console.log(passwordLength);
+    console.log(attributes);
 });
 
-// console.log(generatePassword());
+document.getElementById("generate").addEventListener("click", generatePassword());
+
+
+
+console.log( generatePassword() );
